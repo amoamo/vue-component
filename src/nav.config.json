@@ -1,0 +1,21 @@
+[
+  {
+    "name": "组件",
+    "groups": [
+      {
+        "name": "Basic",
+        "list": [
+          {
+            "path": "/button",
+            "title": "Button 按钮"
+          },
+          {
+            "path": "/icon",
+            "title": "icon 图标"
+          }
+        ]
+      }
+    ]
+  }
+]
+
