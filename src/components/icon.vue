@@ -7,10 +7,7 @@ export default {
   name: 'HmButton',
 
   props: {
-    text: {
-      type: String,
-      default: "submit"
-    },
+    text: String,
     type: {
       type: String,
       default: "primary"

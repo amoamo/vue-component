@@ -1,12 +1,10 @@
-# Hello World!
+# icon 图标
 
-Just testing...
-
-## Simple Code Block
+### 图标的使用
 
 ```html
 <template>
-  <div>icon</div>
+  <span class="icon-fenxiang iconfont"></span>
 </template>
 <script>
   export default {

@@ -4,40 +4,57 @@
   padding:0;
 }
 
+li{
+  list-style: none;
+}
+
+
+
 .page-container{
   width:100%;
   position: absolute;
   top:0;
   bottom:0;
+  box-sizing: border-box;
+  padding:60px 0 0;
 }
 
-.main{
-  display: flex;
-  height:100%;
+.page-nav{
+  position:fixed;
+  left:0;
+  top:60px;
+  bottom:0;
+  max-width:220px;
+  box-sizing: border-box;
+  padding:30px 50px;
+  overflow-y:auto;
+  border-right:1px #eee solid;
 }
 
 .page-component__content{
-  flex:1;
-  padding:30px;
+  padding:30px 30px 30px 230px;
   height:100%;
   box-sizing: border-box;
   overflow-y:auto;
 }
 
-.live-wrapper{
+.page-container .live-wrapper{
   margin-bottom: 10px;
+}
+
+.page-container .table td{
+  max-width:150px;
 }
 
 </style>
 <template>
   <div class="page-container page-component">
-    <div class="main">
-      <div class="nav-wapper">
-        <side-nav :navs="navsData"></side-nav>
-      </div>
-      <div class="page-component__content">
-        <router-view class="content"></router-view>
-      </div>
+    <page-head></page-head>
+
+    <side-nav :navs="navsData" class="page-nav"></side-nav>
+
+    <div class="page-component__content container">
+      <router-view class="content"></router-view>
     </div>
   </div>
 </template>
@@ -45,6 +62,7 @@
 
   import navsData from '../nav.config.json';
   import '../assets/css/bootstrap.min.css';
+  import '../assets/icon/iconfont.css';
   import 'highlight.js/styles/github-gist.css';
 
   export default {
