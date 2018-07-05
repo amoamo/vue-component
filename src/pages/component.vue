@@ -24,6 +24,9 @@
   overflow-y:auto;
 }
 
+.live-wrapper{
+  margin-bottom: 10px;
+}
 
 </style>
 <template>
