@@ -32,6 +32,10 @@
 	}
 </script>
 <style scoped>
+.nav-item:not(:first-child){
+	margin-top: 20px;
+}
+
 .sub-nav-item{
 	padding-left: 20px;
 }

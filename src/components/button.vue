@@ -4,7 +4,13 @@
 
 <script>
 export default {
-  name: 'HmButton',
+  name: 'hm-button',
+
+  inject: {
+    hmForm: {
+      default: ""
+    }
+  },
 
   props: {
     text: {
@@ -14,7 +20,8 @@ export default {
     type: {
       type: String,
       default: "primary"
-    }
+    },
+    htmlType: String
   },
 
   computed: {
@@ -25,6 +32,13 @@ export default {
 
   methods: {
     handleClick: function(event){
+
+      if(this.hmForm){
+        if(this.htmlType === "submit"){
+          this.hmForm.submit();
+        }
+      }
+
       this.$emit("click", {event})
     }
   }

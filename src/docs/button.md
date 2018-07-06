@@ -4,9 +4,9 @@
 
 ```html
 <template>
-  <HmButton text="submit" @click="handleCLick"></HmButton>
-  <HmButton text="warning" type="danger" @click="handleCLick"></HmButton>
-  <HmButton text="warning" type="warning" @click="handleCLick"></HmButton>
+  <hm-button text="submit" @click="handleCLick"></hm-button>
+  <hm-button text="warning" type="danger" @click="handleCLick"></hm-button>
+  <hm-button text="warning" type="warning" @click="handleCLick"></hm-button>
 </template>
 <script>
   export default {

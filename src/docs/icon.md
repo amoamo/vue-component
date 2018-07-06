@@ -1,23 +1,32 @@
 # icon 图标
 
-### 图标的使用
+图标的使用
 
 ```html
 <template>
-  <span class="icon-fenxiang iconfont"></span>
+  <div class="icon-wrapper">
+    <hm-icon type="icon-fenxiang" class="icon" @click="handleClick"></hm-icon>
+  </div>
 </template>
 <script>
   export default {
     data () {
       return {
-        msg: 'Hello world!'
+       
+      }
+    },
+
+    methods: {
+      handleClick: function(){
+        console.log(123)
       }
     }
   }
 </script>
-<style scoped>
-  div {
-    color: green;
+<style>
+  .icon-wrapper .icon{
+    color: #666;
+    font-size: 30px;
   }
 </style>
 <!-- live-0-0.vue -->

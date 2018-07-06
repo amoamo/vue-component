@@ -11,7 +11,25 @@
           },
           {
             "path": "/icon",
-            "title": "icon 图标"
+            "title": "Icon 图标"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "表单",
+    "groups": [
+      {
+        "name": "Form",
+        "list": [
+          {
+            "path": "/form",
+            "title": "Form 表单"
+          },
+          {
+            "path": "/input",
+            "title": "Input 输入框"
           }
         ]
       }

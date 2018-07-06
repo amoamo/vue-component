@@ -1,7 +1,19 @@
-import Button from "./button"
+import Button from "./button";
+import Icon from "./icon";
+
+import Form from "./form";
+import FormItem from "./form-item";
+import Input from "./input";
+// import Select from "./select";
+// import Checkbox from "./checkbox";
 
 const components = [
   Button,
+  Icon,
+
+  Form,
+  FormItem,
+  Input
 ]
 
 const install = function( Vue ){

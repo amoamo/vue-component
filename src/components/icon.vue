@@ -1,30 +1,19 @@
 <template>
-  <button @click="handleClick" class="btn" :class="btnClass">{{ text }}</button>
+  <i class="iconfont" 
+    :class="type" 
+    v-on="$listeners" 
+    v-bind="$attrs"
+  ></i>
 </template>
 
 <script>
 export default {
-  name: 'HmButton',
+  name: 'hm-icon',
 
   props: {
-    text: String,
-    type: {
-      type: String,
-      default: "primary"
-    }
+    type: String
   },
 
-  computed: {
-    btnClass: function(){
-      return `btn-${this.type}`
-    }
-  },
-
-  methods: {
-    handleClick: function(event){
-      this.$emit("click", {event})
-    }
-  }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

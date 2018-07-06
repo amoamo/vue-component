@@ -1,6 +1,6 @@
 <template>
 	<div class="page-header">
-		Vue Component
+		Web Component
 	</div>
 </template>
 <script>
