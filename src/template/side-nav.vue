@@ -1,15 +1,15 @@
 <template>
 	<div class="side-nav">
-		<ul class="nav">
-			<li class="nav-item" v-for="(item, index) in navs" :key="index">
-				<h4>{{item.name}}</h4>
-				<ul class="sub-nav">
-					<li class="sub-nav-item" v-for="(subItem, index) in item.groups[0].list" :key="index">
-						<router-link 
-							:to="base + subItem.path" 
-							exact 
-							v-text="subItem.title">
-						</router-link>
+		<ul class="nav-wrap">
+			<li class="nav-item" v-for="(nav, i) in navsData.component.groups" :key="i">
+				<h4>{{nav.name}}</h4>
+				<ul class="subnav-wrap">
+					<li class="subnav-item" v-for="(subnav, j) in nav.list" :key="j">
+						<router-link
+							:to="navsData.component.path + subnav.path"
+							exact
+							v-text="subnav.title"
+						></router-link>	
 					</li>
 				</ul>
 			</li>
@@ -17,34 +17,37 @@
 	</div>
 </template>
 <script>
-	
 	export default {
-		data() {
-			return {
-				base: "/component"
-			}
-			
-		},
-
 		props: {
-			navs: Array,
+			navsData: Object
 		}
 	}
 </script>
 <style scoped>
-.nav-item:not(:first-child){
-	margin-top: 20px;
+.side-nav{
+	position: fixed;
+	width:220px;
+	top:60px;
+	bottom: 0;
+	left:0;
+	box-sizing: border-box;
+	padding:50px;
+	line-height: 1.8;
+	border-right:1px #ddd solid;
 }
 
-.sub-nav-item{
-	padding-left: 20px;
+.side-nav a{
+	display: block;
+	color: #666;
 }
 
-.sub-nav-item a{
-	color:#666;
+.nav-item h4{
+	font-size: 20px;
+	font-weight: bold;
 }
 
-.sub-nav-item .router-link-active{
-  color:#42b983;
+.subnav-wrap{
+	padding-left:30px;
+	margin-bottom: 20px;
 }
 </style>

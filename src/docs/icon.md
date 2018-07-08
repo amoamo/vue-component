@@ -6,6 +6,7 @@
 <template>
   <div class="icon-wrapper">
     <hm-icon type="icon-fenxiang" class="icon" @click="handleClick"></hm-icon>
+    <hm-icon type="icon-xiangji" class="icon"></hm-icon>
   </div>
 </template>
 <script>
@@ -27,7 +28,16 @@
   .icon-wrapper .icon{
     color: #666;
     font-size: 30px;
+    margin:10px;
   }
 </style>
 <!-- live-0-0.vue -->
 ```
+
+
+### Attributes
+
+| 参数 | 说明 | 类型 | 默认值 |
+| ---- | ---- | ---- | ------ |
+| type | icon type | string | none |
+

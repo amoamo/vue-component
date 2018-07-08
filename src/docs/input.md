@@ -33,7 +33,6 @@
     methods: {
       handleChange(e){
         const {value} = e.target;
-
         console.log(value)
       }
     }
@@ -41,3 +40,15 @@
 </script>
 <!-- live-0-1.vue -->
 ```
+
+### Attributes
+
+同原生浏览器input支持的属性
+
+| 参数 | 说明 | 类型 | 默认值 |
+| ---- | ---- | ---- | ------ |
+| type | 输入框类型 input/textarea | string | input |
+
+### Methods
+
+同原生浏览器input支持的事件

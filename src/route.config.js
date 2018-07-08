@@ -1,11 +1,9 @@
-import navConfig from './nav.config.json';
-
+import navs from "./nav.config.json";
 
 const load = function(path) {
   return r => require.ensure([], () =>
-    r(require(`./pages/${path}.vue`))
+    r(require(`./pages${path}.vue`))
     );
-
 };
 
 const loadDocs = function(path) {
@@ -14,46 +12,35 @@ const loadDocs = function(path) {
     );
 };
 
-const registerRoute = (navConfig) => {
-  let route = [];
-  navConfig.forEach((nav, index) => {
-    route.push({
-      path: `/component`,
-      redirect: `/`,
-      component: load('component'),
-      children: []
-    });
+const registerRoutes = function(){
+	const routes = Object.keys(navs).map(key => {
+		const nav = navs[key];
+		let route = {
+			path: nav.path,
+			component: load(nav.path),
+			children: []
+		}
+		if(nav.groups){
+			nav.groups.forEach(group => {
+				const list = group.list;
 
-    if (nav.groups) {
-      nav.groups.forEach(group => {
-        group.list.forEach(nav => {
-          addRoute(nav, index);
-        });
-      });
-    } else {
-      addRoute(nav, index);
-    }
-
-  });
-  function addRoute(page, index) {
-    const component =  loadDocs(page.path);
-    let child = {
-      path: page.path.slice(1),
-      meta: {
-        title: page.name,
-        description: page.description,
-      },
-      name: 'component-' + (page.title || page.name),
-      component: component.default || component
-    };
-
-    route[index].children.push(child);
-  }
-
-  return route;
-};
-
-let route = registerRoute(navConfig);
+				list.forEach(item => {
+					route.children.push({
+						path: item.path.slice(1),
+						component: loadDocs(item.path),
+						meta: item.title
+					})
+				})
+				
+			})
+		}
+		return route;
+	})
+	return routes;
+}
 
 
-export default route;
+const routes = registerRoutes();
+
+
+export default routes;

@@ -1,39 +1,35 @@
-[
-  {
-    "name": "组件",
-    "groups": [
-      {
-        "name": "Basic",
-        "list": [
-          {
-            "path": "/button",
-            "title": "Button 按钮"
-          },
-          {
-            "path": "/icon",
-            "title": "Icon 图标"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "表单",
-    "groups": [
-      {
-        "name": "Form",
-        "list": [
-          {
-            "path": "/form",
-            "title": "Form 表单"
-          },
-          {
-            "path": "/input",
-            "title": "Input 输入框"
-          }
-        ]
-      }
-    ]
-  }
-]
-
+{
+	"component": {
+		"name": "组件",
+		"path": "/component",
+		"groups": [
+			{
+				"name": "基础组件",
+				"list": [
+					{
+						"path": "/button",
+						"title": "按钮 button"
+					},
+					{
+						"path": "/icon",
+						"title": "图标 icon"
+					}
+				]
+			},
+			{
+				"name": "表单组件",
+				"list": [
+					{
+						"path": "/input",
+						"title": "输入框 input"
+					},
+					{
+						"path": "/form",
+						"title": "表单 form"
+					}
+				]
+			}
+		]
+	}
+	
+}

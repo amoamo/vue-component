@@ -29,4 +29,10 @@
 | ---- | ---- | ---- | ------ |
 | text | 按钮文字 | string | submit |
 | type | 按钮类型(可选 dangder/warning) | string | primary |
+| htmlType | 表单提交按钮 | string | submit |
 
+### Methods
+
+| 方法名 | 说明 | 参数 | 
+| ---- | ---- | ---- | 
+| click | 点击事件 | event对象 |
