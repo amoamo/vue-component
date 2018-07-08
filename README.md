@@ -13,7 +13,7 @@
 # 克隆仓库
 git clone https://github.com/hsian/vue-component.git
 
-npm install
+cd vue-component and npm install
 
 yarn serve or npm run serve
 

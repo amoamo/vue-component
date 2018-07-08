@@ -28,7 +28,9 @@ const registerRoutes = function(){
 					route.children.push({
 						path: item.path.slice(1),
 						component: loadDocs(item.path),
-						meta: item.title
+						meta: {
+							title: item.title
+						}
 					})
 				})
 				
