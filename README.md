@@ -36,7 +36,7 @@ yarn serve or npm run serve
 
 ### 组件库的的UI主题 ###
 
-bootstrap
+使用bootstrap
 
 [https://v4.bootcss.com/](https://v4.bootcss.com/)
 
@@ -148,11 +148,13 @@ bootstrap
 
 - 组件样式添加scoped后页面需要强制刷新
 - require.ensure加载组件
-- 默认引用的vue不支持构建时的template选项，需要修改vue的引用`'vue/dist/vue.js'
+- 默认引用的vue不支持构建时的template选项，需要修改vue的引用为`'vue/dist/vue.js'
 
 ## 组件开发流程 ##
 
 ### 组件插件化 ###
+
+**组件根目录index.js代码片段**
 	
 	// component/index.js
 	import Button from "./button";
