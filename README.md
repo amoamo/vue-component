@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/github/stars/hsian/vue-component.git.svg">
 </p>
 
-在线文档 [https://hsian.github.io/vc-dist/index.html#/component/icon](https://hsian.github.io/vc-dist/index.html#/component/icon)
+在线文档 [https://hsian.github.io/vc-dist/index.html#/component/button](https://hsian.github.io/vc-dist/index.html#/component/button)
 
 ## Install
 
