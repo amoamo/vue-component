@@ -1,10 +1,13 @@
 module.exports = {
 
+	baseUrl: process.env.NODE_ENV === 'production'
+    ? '/vc-dist/'
+    : '/',
+
 	configureWebpack: (config) => {
 		config.resolve.alias = {
       		'vue$': 'vue/dist/vue.js'
  		};
-
 
 		config.module.rules.push({
 	        test: /\.md$/,
@@ -31,7 +34,7 @@ module.exports = {
 	            }
 	          }
 	        ]
-	      })
+	    })
 	}
 
 }

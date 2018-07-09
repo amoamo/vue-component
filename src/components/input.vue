@@ -1,9 +1,10 @@
 <template>
-	<div class="hm-input-wrap">
+	<div class="hm-input-wrap" :data-action="action">
 		<input 
 			:value="currentValue"
 			:type="type" 
-			class="form-control" 
+			class="form-control"
+			:class="activeClass" 
 			v-if="!isTextarea"
 			v-bind="$attrs" 
 			v-on="$listeners"
@@ -21,6 +22,8 @@
 			@blur="handleBlur"
 		>
 		</textarea>	
+
+		<hm-icon :type="iconType" class="icon" :class="iconClass"></hm-icon>
 	</div>
 </template>
 <script>
@@ -38,7 +41,9 @@
 
 		data(){
 			return {
-				currentValue: ""
+				currentValue: "",
+				iconType: "",
+				iconClass: "",
 			}
 		},
 
@@ -49,9 +54,49 @@
 			}
 		},
 
+		watch: {
+			activeClass(){
+				if(this.activeClass === "error"){
+					this.iconType = "icon-cuowu";
+					this.iconClass = "icon-error";
+				}
+				if(this.activeClass === "success"){
+					this.iconType = "icon-zhengque";
+					this.iconClass = "icon-success";
+				}
+			},
+
+			action: function(){
+				if(this.action === "reset"){
+					this.currentValue = "";
+					this.iconType = "";
+					this.iconClass = "";
+				}
+			}
+		},
+
 		computed: {
 			isTextarea: function(){
 				return this.type === "textarea" ? true : false;
+			},
+
+			activeClass: function(){
+				const {validateStatus} = this.hmFormItem;
+
+				if(validateStatus === "error"){
+					return "error";
+				}
+
+				if(validateStatus === "success"){
+					return "success";
+				}
+			},
+
+			action: function(){
+				const {action} = this.hmForm;
+				if(action === "reset"){
+					return "reset";
+				}
 			}
 		},
 
@@ -71,6 +116,28 @@
 </script>
 <style scoped>
 	.hm-input-wrap{
-		display:  block;
+		display: flex;
+		align-items: center
+	}
+
+	.error{
+		border-color:#f56c6c;
+	}
+
+	.success{
+		border-color:#67c23a;
+	}
+
+	.icon{
+		width:30px;
+		margin-left: 10px;
+	}
+
+	.icon-error{
+		color:#f56c6c;
+	}
+
+	.icon-success{
+		color:#67c23a;
 	}
 </style>

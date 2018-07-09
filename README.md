@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/github/stars/hsian/vue-component.git.svg">
 </p>
 
-
+在线文档 [https://hsian.github.io/vc-dist/index.html#/component/icon](https://hsian.github.io/vc-dist/index.html#/component/icon)
 
 ## Install
 
@@ -261,8 +261,24 @@ yarn serve or npm run serve
 	   }
 	},
 
+表单重置时行为监听，如表单重置，由button开始触发，重置form - form-item - input
 
+解决方法
 
+	//template引用
+	<div class="hm-input-wrap" :data-action="action">
+
+	// 子组件监听行为变化
+	watch: {
+		action: function(){
+			if(this.action === "reset"){
+				this.currentValue = "";
+				this.iconType = "";
+				this.iconClass = "";
+			}
+		}
+	}
+	
 
 
 

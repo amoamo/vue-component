@@ -21,7 +21,8 @@
     		label="个人说明">
     		<hm-input type="textarea" placeholder="个人说明" ></hm-input>
     	</hm-form-item>
-    	<hm-button htmlType="submit"></hm-button>
+    	<hm-button htmlType="submit">submit</hm-button>
+      <hm-button htmlType="reset" type="">reset</hm-button>
     </hm-form>
   </div>
 </template>
@@ -29,8 +30,13 @@
   export default {
   	methods: {
   		usernameValidator(value, context){
-  			context.setMessage("用户名格式错误");
-  			return true
+
+        if(value.length >= 3 && value.length <=6){
+          return true
+        }
+
+  			context.setMessage("请输入3 - 6 位用户名");
+        return false
   		},
 
   		handleSubmit(value){

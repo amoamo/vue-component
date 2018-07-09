@@ -1,5 +1,8 @@
 <template>
-  <button @click="handleClick" class="btn" :class="btnClass">{{ text }}</button>
+  <button @click="handleClick" class="btn" :class="btnClass">
+  <slot></slot>
+  {{ text }}
+  </button>
 </template>
 
 <script>
@@ -15,7 +18,7 @@ export default {
   props: {
     text: {
       type: String,
-      default: "submit"
+      default: ""
     },
     type: {
       type: String,
@@ -36,6 +39,12 @@ export default {
       if(this.hmForm){
         if(this.htmlType === "submit"){
           this.hmForm.submit();
+        }
+      }
+
+      if(this.hmForm){
+        if(this.htmlType === "reset"){
+          this.hmForm.resetFields();
         }
       }
 

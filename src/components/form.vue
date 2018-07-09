@@ -16,7 +16,10 @@
 		data(){
 			return {
 				fields: {},
-				invalid: false
+				validators: {},
+				resetFormItem: {},
+				invalid: false,
+				action: ""
 			}
 		},
 
@@ -24,23 +27,30 @@
 			
 		},
 
-		watch: {
-			fields(value){
-				//console.log(value)
-			}
-		},
+		// watch: {
+		// 	fields(value){
+		// 		//console.log(value)
+		// 	}
+		// },
 
 		methods: {
 			resetFields(){
-
-			},
-
-			validateField(){
-
+				this.action = "reset";
 			},
 
 			submit(){
-				this.$emit("submit", {forData: this.fields})
+				this.action = "submit";
+
+				// 提交前验证
+				Object.keys(this.fields).forEach(v => {
+					// fields和validators的key一样
+					this.validators[v]( this.fields[v] )
+				})
+
+				this.$emit("submit", {
+					invalid: this.invalid,
+					forData: this.fields
+				})
 			}
 		}
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="form-group">
+	<div class="form-group" :data-action="action">
 		<slot></slot>
 		<div class="error-message" v-if="validateStatus === 'error'">{{errorMessage}}</div>
 	</div>
@@ -19,7 +19,8 @@
 		data(){
 			return{
 				errorMessage: "",
-				validateStatus: ""
+				validateStatus: "",
+				statusClass: ""
 			}
 		},
 
@@ -35,7 +36,14 @@
 		},
 
 		computed: {
-			
+			action(){
+				const {action} = this.hmForm;
+
+				if(action === 'reset'){
+					this.resetFormItem();
+					return "reset"
+				}
+			}
 		},
 
 		methods: {
@@ -44,21 +52,23 @@
 				if( !(typeof rules === 'object' && !Array.isArray(rules)) ){
 					this.setFieldValue(value);
 					return;
-				};
+				}
 
 				if(rules.required){
 					if(value === ""){
+						this.setErrorMessage(rules.message);
 						this.setFormInvalid(false, "error");
-						return;
+					}else{
+						this.setFormInvalid(true, "success");
 					}
 				}
 
 				if(rules.validator){
 					const correct = rules.validator(value, {setMessage: this.setErrorMessage});
-
 					if(!correct){
 						this.setFormInvalid(false, "error");
-						return;
+					}else{
+						this.setFormInvalid(true, "success");
 					}
 				}
 
@@ -78,20 +88,34 @@
 			},
 
 			setFormInvalid(value, status){
-				this.hmForm.invalid = value
+				this.hmForm.invalid = value;
 				this.validateStatus = status;
+			},
+
+			resetFormItem(){
+				this.validateStatus  = "reset",
+				this.statusClass = ""
+				this.hmForm.invalid = false
 			}
 		},
 
 		created(){
-			if(this.rules){
-				return this.rules.message || "";
+
+			// 初始化字段
+			this.setFieldValue("");
+
+			// 添加字段验证器
+			this.hmForm.validators = {
+				...this.hmForm.validators,
+				[this.name]: this.validateField
 			}
 		},
 	}
 </script>
 <style scoped>
 	.error-message{
-		color:red;
+		margin-top:5px;
+		color:#f56c6c;
+		font-size: 13px;
 	}
 </style>

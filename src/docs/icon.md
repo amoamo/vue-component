@@ -5,8 +5,8 @@
 ```html
 <template>
   <div class="icon-wrapper">
-    <hm-icon type="icon-fenxiang" class="icon" @click="handleClick"></hm-icon>
-    <hm-icon type="icon-xiangji" class="icon"></hm-icon>
+    <hm-icon type="icon-cuowu" class="icon" @click="handleClick"></hm-icon>
+    <hm-icon type="icon-zhengque" class="icon"></hm-icon>
   </div>
 </template>
 <script>
