@@ -3,7 +3,11 @@ import App from './App.vue'
 import VueRouter from 'vue-router';
 import Components from "./components";
 import routes from './route.config';
+
 import SideNav from './template/side-nav.vue';
+
+import Simulator from "./docs/simulator.vue";
+import DocsLayout from "./docs/docs.layout.vue"
 
 Vue.config.productionTip = false
 
@@ -11,6 +15,8 @@ Vue.use(VueRouter);
 Vue.use(Components);
 
 Vue.component('side-nav', SideNav);
+Vue.component("simulator", Simulator);
+Vue.component("docs-layout", DocsLayout);
 
 const router = new VueRouter({
   mode: 'hash',
