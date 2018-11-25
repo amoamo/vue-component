@@ -1,38 +1,31 @@
 <template>
-	<div class="docs">
-		<IndexZhCN/>
-		<!-- <BasicDemo/> -->
+	<div class="docs-layout">
+		<slot></slot>
 	</div>
 </template>
 <script>
-
-	let path = ""
-
 	export default {
 		created: function(){
-			//path = this.$route.path.split("/")[2];
-			path = this.path;
-
+			//path = this.path;
 		},
 		mounted: function(){
-			
 		},
 		props: {
 			path: String
-		},
-		components: {
-			IndexZhCN: () => import(`../components${path}/docs/index.zh-CN.md`),
-			// BasicDemo: () => import(`../components/${path}/docs/basic.demo.vue`)
 		}
 	}
 </script>
 <style scoped>
-	.docs{
+	.docs-layout{
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
+		flex:1;
+		padding:50px 0;
 	}
 
-	.docs div{
-		flex:1;
+	.docs-layout > div:first-child{
+		width:50%;
+		padding:0 20px;
+		box-sizing: border-box;
 	}
 </style>

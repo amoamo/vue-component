@@ -4,19 +4,23 @@ import VueRouter from 'vue-router';
 import Components from "./components";
 import routes from './route.config';
 
-import SideNav from './template/side-nav.vue';
+import PageHeader from "./template/PageHeader.vue";
+import SideNav from './template/SideNav.vue';
 
 import Simulator from "./docs/simulator.vue";
 import DocsLayout from "./docs/docs.layout.vue"
+import DocsMd from "./docs/docs.md.vue"
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
 Vue.use(Components);
 
+Vue.component("page-header", PageHeader);
 Vue.component('side-nav', SideNav);
 Vue.component("simulator", Simulator);
 Vue.component("docs-layout", DocsLayout);
+Vue.component("docs-md", DocsMd);
 
 const router = new VueRouter({
   mode: 'hash',

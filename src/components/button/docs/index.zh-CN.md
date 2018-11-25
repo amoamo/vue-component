@@ -14,24 +14,20 @@
 </template>
 <script>
 
-
-
   export default {
     methods: {
       handleCLick: function(e){
         console.log(e)
       }
-    },
-
+    }
   }
 </script>
 <style scoped>
 
 </style>
-
 ```
 
-### Attributes
+## 属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | ---- | ---- | ---- | ------ |
@@ -39,7 +35,7 @@
 | type | 按钮类型(可选 dangder/warning) | string | primary |
 | htmlType | 表单提交按钮 | string | submit |
 
-### Methods
+## 方法
 
 | 方法名 | 说明 | 参数 | 
 | ---- | ---- | ---- | 

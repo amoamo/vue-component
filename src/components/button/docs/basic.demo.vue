@@ -1,9 +1,9 @@
 <template>
     <simulator>
-      <div>
-        <hm-button text="submit" @click="handleCLick"></hm-button>
-        <hm-button text="warning" type="danger" @click="handleCLick"></hm-button>
-        <hm-button text="warning" type="warning" @click="handleCLick"></hm-button>
+      <div class="pa20">
+        <cy-button class="demo-btn" text="submit" @click="handleCLick"></cy-button>
+        <cy-button class="demo-btn" text="warning" type="danger" @click="handleCLick"></cy-button>
+        <cy-button class="demo-btn" text="warning" type="warning" @click="handleCLick"></cy-button>
       </div>
     </simulator>
 </template>
@@ -18,5 +18,7 @@
   }
 </script>
 <style scoped>
-
+  .demo-btn{
+    margin-bottom: 20px;
+  }
 </style>

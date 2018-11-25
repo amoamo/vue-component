@@ -25,29 +25,29 @@
 </script>
 <style scoped>
 .side-nav{
-	position: fixed;
-	width:220px;
-	top:60px;
-	bottom: 0;
-	left:0;
+	width:200px;
 	box-sizing: border-box;
-	padding:50px;
-	line-height: 1.8;
-	border-right:1px #ddd solid;
+	padding:50px 0 0 50px;
+	display: flex;
+	/*justify-content: center;*/
+	/*align-items: center;*/
 }
 
 .side-nav a{
 	display: block;
+	font-size: 14px;
 	color: #666;
+	line-height: 1.8;
 }
 
 .nav-item h4{
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 12px;
+	font-weight: normal;
+	color:#999;
+	margin-bottom:5px;
 }
 
 .subnav-wrap{
-	padding-left:30px;
 	margin-bottom: 20px;
 }
 </style>

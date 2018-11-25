@@ -13,14 +13,29 @@ const loopPath = function(list) {
   return (function loop(rts) {
     return rts.map(item => {
 
+      const routePath = item.path;
+
       const route = {
-        path: item.path.slice(1),
-        component: Vue.component(`async-${item.path.slice(1)}`, function (resolve, reject) {
+        path: routePath.slice(1),
+        component: Vue.component(`docs-layout-parent`, function (resolve, reject) {
           resolve({
-            template: `<div><docs-layout path="${item.path}"/></div>`
+            data: () => ({routePath: routePath}),
+            template: `
+              <docs-layout :path="routePath">
+                <IndexZhCN/>
+                <BasicDemo/>
+              </docs-layout>
+            `,
+            components: {
+              IndexZhCN: () => import(`./components${routePath}/docs/index.zh-CN.md`),
+              BasicDemo: () => import(`./components${routePath}/docs/basic.demo.vue`)
+            }
           })
         }),
-        //component: loadDocs(item.path),
+
+        // 根据路径加载组件下的md文件
+        // component: loadDocs(item.path),
+
         meta: {
           title: item.title
         },

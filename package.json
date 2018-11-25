@@ -5,10 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepublish": "gulp"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "element-ui": "^2.4.11",
     "hash-sum": "^1.0.2",
     "highlight.js": "^9.12.0",
     "lru-cache": "^4.1.3",

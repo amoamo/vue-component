@@ -21,6 +21,11 @@ export default {
   padding:0;
 }
 
+body{
+  background: #e8edf2!important;
+  font-size: 14px!important;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,13 +38,8 @@ ul,li{
   list-style: none;
 }
 
-
-.language-html{
-  margin-top:20px;
-  padding:20px;
-  border-radius: 4px;
-  display: block;
-  background: #f5f5f5;
+a{
+  text-decoration: none;
 }
 
 .router-link-active{

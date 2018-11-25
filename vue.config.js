@@ -1,3 +1,5 @@
+const hljs = require("highlight.js");
+
 module.exports = {
 
 	baseUrl: process.env.NODE_ENV === 'production'
@@ -16,6 +18,7 @@ module.exports = {
 	          {
 	            loader: 'vue-md-loader',
 	            options: {
+	              wrapper: "docs-md",
 	              preProcess (source) {
 	                // console.log('pre', source)
 	                return source

@@ -31,7 +31,6 @@
     margin:10px;
   }
 </style>
-<!-- live-0-0.vue -->
 ```
 
 
