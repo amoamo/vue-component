@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "prepublish": "gulp"
+    "dist": "npm run clean && webpack --config build/webpack.build.config.js --mode=production",
+    "clean": "rimraf lib"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
@@ -19,6 +20,7 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-table-of-contents": "^0.4.0",
+    "rimraf": "^2.6.2",
     "transliteration": "^1.6.2",
     "vue": "^2.5.16",
     "vue-markdown-loader": "^2.4.1",
@@ -28,8 +30,14 @@
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-env": "^1.7.0",
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "style-loader": "^0.23.1",
     "vue-md-loader": "^1.0.0",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.16",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "eslintConfig": {
     "root": true,
