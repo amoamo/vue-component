@@ -16,9 +16,9 @@ Vue.config.productionTip = false
 Vue.use(VueRouter);
 Vue.use(Components);
 
-// import Button from "../lib/button";
+import Button from "cyan/button";
 
-// Vue.component("lib-button", Button);
+Vue.component("lib-button", Button);
 
 Vue.component("page-header", PageHeader);
 Vue.component('side-nav', SideNav);
