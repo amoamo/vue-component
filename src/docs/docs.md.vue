@@ -36,13 +36,13 @@
 		background: #232323;
     	color: #e6e1dc;
     	padding:20px;
-    	margin-bottom: 20px;
+    	margin-bottom: 50px;
+    	border-radius: 6px;
 	}
 
 	.docs-md .table-responsive{
 		background: #fff;
 		margin-bottom: 30px;
-		padding:0 20px;
 	}
 
 

@@ -22,7 +22,7 @@ export default {
 }
 
 body{
-  background: #e8edf2!important;
+  /*background: #e8edf2!important;*/
   font-size: 14px!important;
 }
 

@@ -3,7 +3,7 @@ const hljs = require("highlight.js");
 module.exports = {
 
 	baseUrl: process.env.NODE_ENV === 'production'
-    ? '/vc-dist/'
+    ? '/cyan/'
     : '/',
 
 	configureWebpack: (config) => {
