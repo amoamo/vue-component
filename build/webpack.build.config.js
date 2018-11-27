@@ -4,14 +4,14 @@ const webpack = require("webpack");
 const nodeExternals = require('webpack-node-externals');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
+const components = require('./components.json');
+
 const webpackConfig = {
-  entry: {
-    "button": "./src/components/button/index.js"
-  },
+  mode: "production",
+  entry: components,
   output: {
     path: path.resolve(process.cwd(), './lib'),
-    publicPath: '/dist/',
-    filename: '[name].js',
+    filename: '[name]/index.js',
     chunkFilename: '[id].js',
     libraryTarget: 'commonjs2'
   },
@@ -30,7 +30,7 @@ const webpackConfig = {
       //   include: process.cwd(),
       //   //exclude: config.jsexclude,
       //   loader: 'babel-loader',
-      //   plugins: ["transform-es2015-modules-commonjs"]
+      //   //plugins: ["transform-es2015-modules-commonjs"]
       // },
       {
         test: /\.vue$/,
@@ -50,12 +50,35 @@ const webpackConfig = {
       {
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.otf|ttf|woff2?|eot(\?\S*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: path.posix.join('static', '[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.svg(\?\S*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: path.posix.join('static', '[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(gif|png|jpe?g)(\?\S*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: path.posix.join('static', '[name].[hash:7].[ext]')
+        }
       }
     ]
   },
   plugins: [
     new ProgressBarPlugin(),
-    // make sure to include the plugin for the magic
     new VueLoaderPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize: true

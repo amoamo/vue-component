@@ -7,8 +7,9 @@
 </template>
 
 <script>
+import './assets/iconfont.css';
 export default {
-  name: 'hm-icon',
+  name: 'cy-icon',
 
   props: {
     type: String

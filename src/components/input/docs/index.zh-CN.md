@@ -17,7 +17,6 @@
     }
   }
 </script>
-<!-- live-0-0.vue -->
 ```
 
 文本输入框
@@ -38,7 +37,6 @@
     }
   }
 </script>
-<!-- live-0-1.vue -->
 ```
 
 ### Attributes

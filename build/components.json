@@ -1,4 +1,7 @@
 {
-  "button": "./src/components/button/index.js",
-  "icon": "./src/components/icon/index.js"
+	"button": "./src/components/button/index.js",
+	"icon": "./src/components/icon/index.js",
+	"form": "./src/components/form/index.js",
+	"form-item": "./src/components/form-item/index.js",
+	"input": "./src/components/input/index.js"
 }

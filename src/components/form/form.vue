@@ -5,11 +5,11 @@
 </template>
 <script>
 	export default {
-		name: 'hm-form',
+		name: 'cy-form',
 
 		provide(){
 			return {
-				hmForm: this
+				cyForm: this
 			}
 		},
 

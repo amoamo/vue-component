@@ -5,47 +5,46 @@
 ```html
 <template>
   <div class="form-wrapper">
-    <hm-form @submit="handleSubmit">
-    	<hm-form-item 
-    		name="username"
-    		label="用户名"
-    		:rules="{
-	    		required: true,
-	    		message: '请输入用户名',
-	    		validator: this.usernameValidator
-    		}">
-    		<hm-input placeholder="username" ></hm-input>
-    	</hm-form-item>
-    	<hm-form-item 
-    		name="summary"
-    		label="个人说明">
-    		<hm-input type="textarea" placeholder="个人说明" ></hm-input>
-    	</hm-form-item>
-    	<hm-button htmlType="submit">submit</hm-button>
-      <hm-button htmlType="reset" type="">reset</hm-button>
-    </hm-form>
+    <cy-form @submit="handleSubmit">
+      <cy-form-item 
+        name="username"
+        label="用户名"
+        :rules="{
+          required: true,
+          message: '请输入用户名',
+          validator: this.usernameValidator
+        }">
+        <cy-input placeholder="username" ></cy-input>
+      </cy-form-item>
+      <cy-form-item 
+        name="summary"
+        label="个人说明">
+        <cy-input type="textarea" placeholder="个人说明" ></cy-input>
+      </cy-form-item>
+      <cy-button htmlType="submit">submit</cy-button>
+      <cy-button htmlType="reset" type="">reset</cy-button>
+    </cy-form>
   </div>
 </template>
 <script>
   export default {
-  	methods: {
-  		usernameValidator(value, context){
+    methods: {
+      usernameValidator(value, context){
 
         if(value.length >= 3 && value.length <=6){
           return true
         }
 
-  			context.setMessage("请输入3 - 6 位用户名");
+        context.setMessage("请输入3 - 6 位用户名");
         return false
-  		},
+      },
 
-  		handleSubmit(value){
-  			console.log(value)
-  		}
-  	}
+      handleSubmit(value){
+        console.log(value)
+      }
+    }
   }
 </script>
-<!-- live-0-0.vue -->
 ```
 
 # form-item

@@ -1,8 +1,6 @@
 <template>
     <simulator>
-      
-      <lib-button>123</lib-button>
-
+      <cy-button text="4124124"></cy-button>
       <div class="pa20">
         <cy-button class="demo-btn" text="submit" @click="handleCLick"></cy-button>
         <cy-button class="demo-btn" text="warning" type="danger" @click="handleCLick"></cy-button>

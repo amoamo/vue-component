@@ -1,5 +1,5 @@
 <template>
-	<div class="hm-input-wrap" :data-action="action">
+	<div class="cy-input-wrap" :data-action="action">
 		<input 
 			:value="currentValue"
 			:type="type" 
@@ -23,18 +23,18 @@
 		>
 		</textarea>	
 
-		<hm-icon :type="iconType" class="icon" :class="iconClass"></hm-icon>
+		<cy-icon :type="iconType" class="icon" :class="iconClass"></cy-icon>
 	</div>
 </template>
 <script>
 	export default {
-		name: 'hm-input',
+		name: 'cy-input',
 
 		inject: {
-			hmForm: {
+			cyForm: {
 				default: ""
 			},
-			hmFormItem: {
+			cyFormItem: {
 				default: ""
 			}
 		},
@@ -81,7 +81,7 @@
 			},
 
 			activeClass: function(){
-				const {validateStatus} = this.hmFormItem;
+				const {validateStatus} = this.cyFormItem;
 
 				if(validateStatus === "error"){
 					return "error";
@@ -93,7 +93,7 @@
 			},
 
 			action: function(){
-				const {action} = this.hmForm;
+				const {action} = this.cyForm;
 				if(action === "reset"){
 					return "reset";
 				}
@@ -108,14 +108,14 @@
 			},
 
 			handleBlur(){
-				const {validateField} = this.hmFormItem;
+				const {validateField} = this.cyFormItem;
 				validateField && validateField(this.currentValue)
 			}
 		}
 	}
 </script>
 <style scoped>
-	.hm-input-wrap{
+	.cy-input-wrap{
 		display: flex;
 		align-items: center
 	}

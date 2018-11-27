@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dist": "npm run clean && webpack --config build/webpack.build.config.js --mode=production",
+    "dist": "npm run clean && webpack --config build/webpack.build.config.js && node build/build.entry.js",
     "clean": "rimraf lib"
   },
   "dependencies": {

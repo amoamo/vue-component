@@ -6,15 +6,15 @@
 </template>
 <script>
 	export default {
-		name: "hm-form-item",
+		name: "cy-form-item",
 
 		provide(){
 			return {
-				hmFormItem: this
+				cyFormItem: this
 			}
 		},
 
-		inject: ['hmForm'],
+		inject: ['cyForm'],
 
 		data(){
 			return{
@@ -37,7 +37,7 @@
 
 		computed: {
 			action(){
-				const {action} = this.hmForm;
+				const {action} = this.cyForm;
 
 				if(action === 'reset'){
 					this.resetFormItem();
@@ -80,22 +80,22 @@
 			},
 
 			setFieldValue(value){
-				const {fields} = this.hmForm;
-				this.hmForm.fields = {
+				const {fields} = this.cyForm;
+				this.cyForm.fields = {
 					...fields,
 					[this.name]: value
 				}
 			},
 
 			setFormInvalid(value, status){
-				this.hmForm.invalid = value;
+				this.cyForm.invalid = value;
 				this.validateStatus = status;
 			},
 
 			resetFormItem(){
 				this.validateStatus  = "reset",
 				this.statusClass = ""
-				this.hmForm.invalid = false
+				this.cyForm.invalid = false
 			}
 		},
 
@@ -105,8 +105,8 @@
 			this.setFieldValue("");
 
 			// 添加字段验证器
-			this.hmForm.validators = {
-				...this.hmForm.validators,
+			this.cyForm.validators = {
+				...this.cyForm.validators,
 				[this.name]: this.validateField
 			}
 		},

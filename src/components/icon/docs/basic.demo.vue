@@ -1,7 +1,7 @@
 <template>
   <simulator>
-    <hm-icon type="icon-cuowu" class="icon" @click="handleClick"></hm-icon>
-    <hm-icon type="icon-zhengque" class="icon"></hm-icon>
+    <cy-icon type="icon-cuowu" class="icon" @click="handleClick"></cy-icon>
+    <cy-icon type="icon-zhengque" class="icon"></cy-icon>
   </simulator>
 </template>
 <script>

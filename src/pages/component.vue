@@ -9,7 +9,6 @@
 </template>
 <script>
   import navsData from "../nav.config.json";
-  import '../assets/icon/iconfont.css';
   import '../assets/css/bootstrap.min.css';
   import '../assets/css/common.css';
   import 'highlight.js/styles/androidstudio.css';
